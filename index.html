@@ -17,799 +17,181 @@
     --blanc: #f4f4f0;
     --vert: #2ecc71;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--noir);
-    color: var(--blanc);
-    font-family: 'Barlow', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    overflow-x: hidden;
-  }
-
-  /* HERO */
-  .hero {
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 48px 24px 40px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Arc de soudure animé en fond */
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -20%;
-    right: -10%;
-    width: 60vw;
-    height: 60vw;
-    max-width: 400px;
-    max-height: 400px;
-    background: radial-gradient(circle at center, rgba(255,85,0,0.15) 0%, rgba(255,85,0,0.05) 40%, transparent 70%);
-    border-radius: 50%;
-    animation: pulse 4s ease-in-out infinite;
-  }
-
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--orange), transparent);
-  }
-
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.6; }
-    50% { transform: scale(1.1); opacity: 1; }
-  }
-
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255,85,0,0.1);
-    border: 1px solid rgba(255,85,0,0.3);
-    border-radius: 100px;
-    padding: 6px 14px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--orange);
-    margin-bottom: 28px;
-    width: fit-content;
-    animation: fadeUp 0.6s ease both;
-  }
-
-  .badge-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--orange);
-    border-radius: 50%;
-    animation: blink 1.5s ease-in-out infinite;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.2; }
-  }
-
-  .hero-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(52px, 14vw, 88px);
-    font-weight: 800;
-    line-height: 0.95;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    margin-bottom: 24px;
-    animation: fadeUp 0.6s 0.1s ease both;
-  }
-
-  .hero-title .highlight {
-    color: var(--orange);
-    display: block;
-  }
-
-  .hero-sub {
-    font-size: 17px;
-    color: var(--gris-light);
-    max-width: 340px;
-    line-height: 1.6;
-    margin-bottom: 36px;
-    animation: fadeUp 0.6s 0.2s ease both;
-    font-weight: 300;
-  }
-
-  .hero-sub strong {
-    color: var(--blanc);
-    font-weight: 500;
-  }
-
-  .cta-btn {
-    display: inline-block;
-    background: var(--orange);
-    color: white;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 16px 32px;
-    border-radius: 4px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
-    transition: background 0.2s, transform 0.1s;
-    animation: fadeUp 0.6s 0.3s ease both;
-    -webkit-appearance: none;
-  }
-
+  body { background: var(--noir); color: var(--blanc); font-family: 'Barlow', sans-serif; font-size: 16px; line-height: 1.5; overflow-x: hidden; }
+  .hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 48px 24px 40px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 60vw; height: 60vw; max-width: 400px; max-height: 400px; background: radial-gradient(circle at center, rgba(255,85,0,0.15) 0%, rgba(255,85,0,0.05) 40%, transparent 70%); border-radius: 50%; animation: pulse 4s ease-in-out infinite; }
+  .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--orange), transparent); }
+  @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.1); opacity: 1; } }
+  .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,85,0,0.1); border: 1px solid rgba(255,85,0,0.3); border-radius: 100px; padding: 6px 14px; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--orange); margin-bottom: 28px; width: fit-content; animation: fadeUp 0.6s ease both; }
+  .badge-dot { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; animation: blink 1.5s ease-in-out infinite; }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+  .hero-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(52px, 14vw, 88px); font-weight: 800; line-height: 0.95; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 24px; animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-title .highlight { color: var(--orange); display: block; }
+  .hero-sub { font-size: 17px; color: var(--gris-light); max-width: 340px; line-height: 1.6; margin-bottom: 36px; animation: fadeUp 0.6s 0.2s ease both; font-weight: 300; }
+  .hero-sub strong { color: var(--blanc); font-weight: 500; }
+  .cta-btn { display: inline-block; background: var(--orange); color: white; font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 16px 32px; border-radius: 4px; text-decoration: none; border: none; cursor: pointer; width: 100%; text-align: center; transition: background 0.2s, transform 0.1s; animation: fadeUp 0.6s 0.3s ease both; -webkit-appearance: none; }
   .cta-btn:active { transform: scale(0.98); background: var(--orange-dark); }
-
-  /* REASONS */
-  .reasons {
-    padding: 56px 24px;
-    border-top: 1px solid var(--noir-light);
-  }
-
-  .section-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--orange);
-    margin-bottom: 32px;
-  }
-
-  .reason {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 36px;
-    align-items: flex-start;
-  }
-
-  .reason-number {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 48px;
-    font-weight: 800;
-    color: var(--noir-light);
-    line-height: 1;
-    flex-shrink: 0;
-    width: 52px;
-    text-align: right;
-  }
-
-  .reason-content {}
-
-  .reason-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    color: var(--blanc);
-  }
-
-  .reason-text {
-    font-size: 14px;
-    color: var(--gris);
-    line-height: 1.6;
-    font-weight: 300;
-  }
-
-  /* FORM */
-  .form-section {
-    padding: 0 24px 64px;
-    position: relative;
-  }
-
-  .form-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 24px; right: 24px;
-    height: 1px;
-    background: linear-gradient(90deg, var(--orange), transparent);
-  }
-
-  .form-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 32px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-    padding-top: 40px;
-  }
-
-  .form-subtitle {
-    font-size: 14px;
-    color: var(--gris);
-    margin-bottom: 32px;
-    font-weight: 300;
-  }
-
-  .form-group {
-    margin-bottom: 16px;
-  }
-
-  .form-label {
-    display: block;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gris);
-    margin-bottom: 8px;
-  }
-
-  .form-input, .form-select {
-    width: 100%;
-    background: var(--noir-mid);
-    border: 1px solid var(--noir-light);
-    border-radius: 4px;
-    color: var(--blanc);
-    font-family: 'Barlow', sans-serif;
-    font-size: 16px;
-    padding: 14px 16px;
-    outline: none;
-    transition: border-color 0.2s;
-    -webkit-appearance: none;
-    appearance: none;
-  }
-
-  .form-input:focus, .form-select:focus {
-    border-color: var(--orange);
-  }
-
+  .reasons { padding: 56px 24px; border-top: 1px solid var(--noir-light); }
+  .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--orange); margin-bottom: 32px; }
+  .reason { display: flex; gap: 20px; margin-bottom: 36px; align-items: flex-start; }
+  .reason-number { font-family: 'Barlow Condensed', sans-serif; font-size: 48px; font-weight: 800; color: var(--noir-light); line-height: 1; flex-shrink: 0; width: 52px; text-align: right; }
+  .reason-title { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; color: var(--blanc); }
+  .reason-text { font-size: 14px; color: var(--gris); line-height: 1.6; font-weight: 300; }
+  .form-section { padding: 0 24px 64px; position: relative; }
+  .form-section::before { content: ''; position: absolute; top: 0; left: 24px; right: 24px; height: 1px; background: linear-gradient(90deg, var(--orange), transparent); }
+  .form-title { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; padding-top: 40px; }
+  .form-subtitle { font-size: 14px; color: var(--gris); margin-bottom: 32px; font-weight: 300; }
+  .form-group { margin-bottom: 16px; }
+  .form-label { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gris); margin-bottom: 8px; }
+  .form-input, .form-select { width: 100%; background: var(--noir-mid); border: 1px solid var(--noir-light); border-radius: 4px; color: var(--blanc); font-family: 'Barlow', sans-serif; font-size: 16px; padding: 14px 16px; outline: none; transition: border-color 0.2s; -webkit-appearance: none; appearance: none; }
+  .form-input:focus, .form-select:focus { border-color: var(--orange); }
   .form-input::placeholder { color: var(--gris); }
-
-  .form-select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    padding-right: 40px;
-    cursor: pointer;
-  }
-
+  .form-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; cursor: pointer; }
   .form-select option { background: var(--noir-mid); }
-
-  /* Toggle CDI */
-  .toggle-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .toggle-option {
-    position: relative;
-  }
-
-  .toggle-option input {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  .toggle-label {
-    display: block;
-    background: var(--noir-mid);
-    border: 1px solid var(--noir-light);
-    border-radius: 4px;
-    padding: 14px 12px;
-    text-align: center;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--gris);
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .toggle-option input:checked + .toggle-label {
-    background: rgba(255,85,0,0.1);
-    border-color: var(--orange);
-    color: var(--orange);
-  }
-
-  .toggle-option input[type=checkbox]:checked + .toggle-label {
-    background: rgba(255,85,0,0.15);
-    border-color: var(--orange);
-    color: var(--orange);
-  }
-
-  .submit-btn {
-    width: 100%;
-    background: var(--orange);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 18px;
-    margin-top: 24px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-    -webkit-appearance: none;
-  }
-
+  .toggle-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .toggle-option { position: relative; }
+  .toggle-option input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .toggle-label { display: block; background: var(--noir-mid); border: 1px solid var(--noir-light); border-radius: 4px; padding: 14px 12px; text-align: center; font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gris); cursor: pointer; transition: all 0.2s; }
+  .toggle-option input:checked + .toggle-label { background: rgba(255,85,0,0.1); border-color: var(--orange); color: var(--orange); }
+  .toggle-option input[type=checkbox]:checked + .toggle-label { background: rgba(255,85,0,0.15); border-color: var(--orange); color: var(--orange); }
+  .submit-btn { width: 100%; background: var(--orange); color: white; border: none; border-radius: 4px; font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; padding: 18px; margin-top: 24px; cursor: pointer; transition: background 0.2s, transform 0.1s; -webkit-appearance: none; }
   .submit-btn:active { transform: scale(0.98); background: var(--orange-dark); }
-
-  .form-note {
-    text-align: center;
-    font-size: 11px;
-    color: var(--gris);
-    margin-top: 16px;
-    line-height: 1.6;
-  }
-
-  /* SUCCESS */
-  .success-screen {
-    display: none;
-    text-align: center;
-    padding: 48px 24px;
-  }
-
+  .form-note { text-align: center; font-size: 11px; color: var(--gris); margin-top: 16px; line-height: 1.6; }
+  .success-screen { display: none; text-align: center; padding: 48px 24px; }
   .success-screen.active { display: block; }
-
-  .success-icon {
-    font-size: 64px;
-    margin-bottom: 24px;
-    animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-  }
-
-  @keyframes pop {
-    0% { transform: scale(0); }
-    100% { transform: scale(1); }
-  }
-
-  .success-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 36px;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    color: var(--vert);
-  }
-
-  .success-text {
-    font-size: 15px;
-    color: var(--gris-light);
-    line-height: 1.7;
-    max-width: 280px;
-    margin: 0 auto;
-  }
-
-  /* FOOTER */
-  .footer {
-    padding: 24px;
-    border-top: 1px solid var(--noir-light);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer-brand {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: 2px;
-  }
-
+  .success-icon { font-size: 64px; margin-bottom: 24px; animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+  @keyframes pop { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+  .success-title { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 800; text-transform: uppercase; margin-bottom: 12px; color: var(--vert); }
+  .success-text { font-size: 15px; color: var(--gris-light); line-height: 1.7; max-width: 280px; margin: 0 auto; }
+  .footer { padding: 24px; border-top: 1px solid var(--noir-light); display: flex; justify-content: space-between; align-items: center; }
+  .footer-brand { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; letter-spacing: 2px; }
   .footer-brand span { color: var(--orange); }
-
-  .footer-by {
-    font-size: 11px;
-    color: var(--gris);
-    letter-spacing: 1px;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Ligne de soudure décorative */
-  .weld-line {
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--orange) 20%, #ffaa00 50%, var(--orange) 80%, transparent);
-    margin: 0 24px;
-    opacity: 0.4;
-    border-radius: 2px;
-  }
-
-  /* POPUP QUALIFICATION */
-  .popup-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    z-index: 1000;
-    overflow-y: auto;
-    padding: 20px;
-  }
-
+  .footer-by { font-size: 11px; color: var(--gris); letter-spacing: 1px; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .weld-line { height: 2px; background: linear-gradient(90deg, transparent, var(--orange) 20%, #ffaa00 50%, var(--orange) 80%, transparent); margin: 0 24px; opacity: 0.4; border-radius: 2px; }
+  .popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 1000; overflow-y: auto; padding: 20px; }
   .popup-overlay.active { display: flex; align-items: flex-start; justify-content: center; }
-
-  .popup-box {
-    background: var(--noir-mid);
-    border: 1px solid var(--orange);
-    border-top: 4px solid var(--orange);
-    border-radius: 8px;
-    padding: 32px 24px;
-    width: 100%;
-    max-width: 420px;
-    margin: auto;
-    position: relative;
-    animation: slideUp 0.3s ease;
-  }
-
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .popup-header {
-    text-align: center;
-    margin-bottom: 28px;
-  }
-
+  .popup-box { background: var(--noir-mid); border: 1px solid var(--orange); border-top: 4px solid var(--orange); border-radius: 8px; padding: 32px 24px; width: 100%; max-width: 420px; margin: auto; position: relative; animation: slideUp 0.3s ease; }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  .popup-header { text-align: center; margin-bottom: 28px; }
   .popup-icon { font-size: 40px; margin-bottom: 12px; }
-
-  .popup-title {
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 28px;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: var(--blanc);
-    line-height: 1.1;
-    margin-bottom: 8px;
-  }
-
+  .popup-title { font-family: "Barlow Condensed", sans-serif; font-size: 28px; font-weight: 800; text-transform: uppercase; color: var(--blanc); line-height: 1.1; margin-bottom: 8px; }
   .popup-title span { color: var(--orange); }
-
-  .popup-subtitle {
-    font-size: 13px;
-    color: var(--gris);
-    line-height: 1.5;
-  }
-
-  .popup-progress {
-    background: var(--noir-light);
-    border-radius: 4px;
-    height: 4px;
-    margin-bottom: 24px;
-    overflow: hidden;
-  }
-
-  .popup-progress-bar {
-    background: var(--orange);
-    height: 4px;
-    border-radius: 4px;
-    width: 0%;
-    transition: width 0.3s ease;
-  }
-
+  .popup-subtitle { font-size: 13px; color: var(--gris); line-height: 1.5; }
+  .popup-progress { background: var(--noir-light); border-radius: 4px; height: 4px; margin-bottom: 24px; overflow: hidden; }
+  .popup-progress-bar { background: var(--orange); height: 4px; border-radius: 4px; width: 0%; transition: width 0.3s ease; }
   .popup-step { display: none; }
   .popup-step.active { display: block; }
-
-  .popup-step-label {
-    font-family: "DM Mono", monospace;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--orange);
-    margin-bottom: 8px;
-  }
-
-  .popup-question {
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--blanc);
-    margin-bottom: 16px;
-    line-height: 1.3;
-  }
-
-  .popup-skip {
-    text-align: center;
-    margin-top: 16px;
-  }
-
-  .popup-skip button {
-    background: none;
-    border: none;
-    color: var(--gris);
-    font-size: 12px;
-    cursor: pointer;
-    text-decoration: underline;
-    font-family: "Barlow", sans-serif;
-  }
-
-  .popup-done {
-    text-align: center;
-    padding: 20px 0;
-  }
+  .popup-step-label { font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
+  .popup-question { font-family: "Barlow Condensed", sans-serif; font-size: 20px; font-weight: 700; color: var(--blanc); margin-bottom: 16px; line-height: 1.3; }
+  .popup-skip { text-align: center; margin-top: 16px; }
+  .popup-skip button { background: none; border: none; color: var(--gris); font-size: 12px; cursor: pointer; text-decoration: underline; font-family: "Barlow", sans-serif; }
+  .popup-done { text-align: center; padding: 20px 0; }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="badge">
-    <div class="badge-dot"></div>
-    Communauté MIG · MAG
-  </div>
-  <h1 class="hero-title">
-    Tu sais<br>souder,
-    <span class="highlight">tu veux<br>bouger ?</span>
-  </h1>
-  <p class="hero-sub">
-    MIG · MAG · TIG · MMA — On te trouve un <strong>CDI qui te correspond</strong>, sans agence classique, sans promesses en l'air.
-  </p>
+  <div class="badge"><div class="badge-dot"></div>Communauté MIG · MAG</div>
+  <h1 class="hero-title">Tu sais<br>souder,<span class="highlight">tu veux<br>bouger ?</span></h1>
+  <p class="hero-sub">MIG · MAG · TIG · MMA — On te trouve un <strong>CDI qui te correspond</strong>, sans agence classique, sans promesses en l'air.</p>
   <a href="#inscription" class="cta-btn">Je veux un CDI →</a>
 </section>
 
-<!-- LIGNE DE SOUDURE -->
 <div class="weld-line"></div>
 
-<!-- RAISONS -->
 <section class="reasons">
   <div class="section-label">Pourquoi MigMag</div>
-
-  <div class="reason">
-    <div class="reason-number">01</div>
-    <div class="reason-content">
-      <div class="reason-title">Des CDI, pas de l'intérim</div>
-      <div class="reason-text">On ne te propose que des postes en CDI chez des industriels sérieux. Pas de missions de 3 semaines, pas de renouvellements à la dernière minute.</div>
-    </div>
-  </div>
-
-  <div class="reason">
-    <div class="reason-number">02</div>
-    <div class="reason-content">
-      <div class="reason-title">On connaît ton métier</div>
-      <div class="reason-text">MIG, MAG, positions, certifications — on ne te fait pas perdre ton temps avec des offres qui ne correspondent pas à ton niveau ou ta spécialité.</div>
-    </div>
-  </div>
-
-  <div class="reason">
-    <div class="reason-number">03</div>
-    <div class="reason-content">
-      <div class="reason-title">Tu choisis quand tu es prêt</div>
-      <div class="reason-text">Rejoins la communauté maintenant, même si tu ne cherches pas aujourd'hui. Quand l'envie vient, on est là. Aucune obligation, aucun harcèlement.</div>
-    </div>
-  </div>
+  <div class="reason"><div class="reason-number">01</div><div class="reason-content"><div class="reason-title">Des CDI, pas de l'intérim</div><div class="reason-text">On ne te propose que des postes en CDI chez des industriels sérieux. Pas de missions de 3 semaines, pas de renouvellements à la dernière minute.</div></div></div>
+  <div class="reason"><div class="reason-number">02</div><div class="reason-content"><div class="reason-title">On connaît ton métier</div><div class="reason-text">MIG, MAG, positions, certifications — on ne te fait pas perdre ton temps avec des offres qui ne correspondent pas à ton niveau ou ta spécialité.</div></div></div>
+  <div class="reason"><div class="reason-number">03</div><div class="reason-content"><div class="reason-title">Tu choisis quand tu es prêt</div><div class="reason-text">Rejoins la communauté maintenant, même si tu ne cherches pas aujourd'hui. Quand l'envie vient, on est là. Aucune obligation, aucun harcèlement.</div></div></div>
 </section>
 
-<!-- LIGNE DE SOUDURE -->
 <div class="weld-line"></div>
 
-<!-- FORMULAIRE -->
 <section class="form-section" id="inscription">
-
   <div id="form-wrapper">
     <div class="form-title">Je rejoins<br>MigMag</div>
     <p class="form-subtitle">30 secondes. Aucun CV à envoyer.</p>
-
-    <div class="form-group">
-      <label class="form-label">Prénom</label>
-      <input type="text" class="form-input" id="prenom" placeholder="Ton prénom" autocomplete="given-name">
-    </div>
-
-    <div class="form-group">
-      <label class="form-label">Nom</label>
-      <input type="text" class="form-input" id="nom" placeholder="Ton nom" autocomplete="family-name">
-    </div>
-
-    <div class="form-group">
-      <label class="form-label">Téléphone</label>
-      <input type="tel" class="form-input" id="tel" placeholder="06 xx xx xx xx" autocomplete="tel">
-    </div>
-
-    <div class="form-group">
-      <label class="form-label">Code postal</label>
-      <input type="text" class="form-input" id="cp" placeholder="Ex : 44000" inputmode="numeric" maxlength="5">
-    </div>
-
-    <div class="form-group">
-      <label class="form-label">Procédé principal</label>
-      <select class="form-select" id="procede">
-        <option value="" disabled selected>Ton procédé</option>
-        <option value="mig">MIG (Métal Inerte Gas)</option>
-        <option value="mag">MAG (Métal Actif Gas)</option>
-        <option value="mig-mag">MIG + MAG</option>
-        <option value="tig">TIG (Tungstène Inerte Gas)</option>
-        <option value="mma">MMA (Électrode enrobée)</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label class="form-label">Situation actuelle</label>
-      <select class="form-select" id="situation" onchange="handleSituation()">
-        <option value="" disabled selected>Ta situation</option>
-        <option value="cdi">En CDI</option>
-        <option value="interim">En intérim</option>
-        <option value="sans-emploi">Sans emploi</option>
-        <option value="formation">En formation</option>
-      </select>
-    </div>
-
-    <div class="form-group" id="groupe-employeur" style="display:none;">
-      <label class="form-label" id="label-employeur">Nom de ton entreprise</label>
-      <input type="text" class="form-input" id="employeur" placeholder="Nom de l'entreprise ou agence">
-    </div>
-
-    <div class="form-group">
-      <label class="form-label">Tu cherches un CDI ?</label>
-      <div class="toggle-group">
-        <div class="toggle-option">
-          <input type="radio" name="cdi" id="cdi-oui" value="oui">
-          <label class="toggle-label" for="cdi-oui">✓ Oui, maintenant</label>
-        </div>
-        <div class="toggle-option">
-          <input type="radio" name="cdi" id="cdi-plus-tard" value="plus-tard">
-          <label class="toggle-label" for="cdi-plus-tard">Pas encore</label>
-        </div>
-      </div>
-    </div>
-
-    <button class="submit-btn" onclick="handleSubmit()">
-      Je rejoins la communauté →
-    </button>
-
-    <p class="form-note">
-      Tes infos restent entre nous. Pas de spam, pas de revente.<br>
-      MigMag par WeldingTalent.
-    </p>
+    <div class="form-group"><label class="form-label">Prénom</label><input type="text" class="form-input" id="prenom" placeholder="Ton prénom" autocomplete="given-name"></div>
+    <div class="form-group"><label class="form-label">Nom</label><input type="text" class="form-input" id="nom" placeholder="Ton nom" autocomplete="family-name"></div>
+    <div class="form-group"><label class="form-label">Téléphone</label><input type="tel" class="form-input" id="tel" placeholder="06 xx xx xx xx" autocomplete="tel"></div>
+    <div class="form-group"><label class="form-label">Code postal</label><input type="text" class="form-input" id="cp" placeholder="Ex : 44000" inputmode="numeric" maxlength="5"></div>
+    <div class="form-group"><label class="form-label">Procédé principal</label><select class="form-select" id="procede"><option value="" disabled selected>Ton procédé</option><option value="mig">MIG (Métal Inerte Gas)</option><option value="mag">MAG (Métal Actif Gas)</option><option value="mig-mag">MIG + MAG</option><option value="tig">TIG (Tungstène Inerte Gas)</option><option value="mma">MMA (Électrode enrobée)</option></select></div>
+    <div class="form-group"><label class="form-label">Situation actuelle</label><select class="form-select" id="situation" onchange="handleSituation()"><option value="" disabled selected>Ta situation</option><option value="cdi">En CDI</option><option value="interim">En intérim</option><option value="sans-emploi">Sans emploi</option><option value="formation">En formation</option></select></div>
+    <div class="form-group" id="groupe-employeur" style="display:none;"><label class="form-label" id="label-employeur">Nom de ton entreprise</label><input type="text" class="form-input" id="employeur" placeholder="Nom de l'entreprise ou agence"></div>
+    <div class="form-group"><label class="form-label">Tu cherches un CDI ?</label><div class="toggle-group"><div class="toggle-option"><input type="radio" name="cdi" id="cdi-oui" value="oui"><label class="toggle-label" for="cdi-oui">✓ Oui, maintenant</label></div><div class="toggle-option"><input type="radio" name="cdi" id="cdi-plus-tard" value="plus-tard"><label class="toggle-label" for="cdi-plus-tard">Pas encore</label></div></div></div>
+    <button class="submit-btn" onclick="handleSubmit()">Je rejoins la communauté →</button>
+    <p class="form-note">Tes infos restent entre nous. Pas de spam, pas de revente.<br>MigMag par WeldingTalent.</p>
   </div>
-
-  <!-- QUALIFICATION -->
   <div class="success-screen" id="success">
-
     <div class="success-icon">🔥</div>
     <div class="success-title">Bienvenue<br>dans MigMag !</div>
-    <p class="success-text">
-      Inscription confirmée.<br><br>
-      Le popup de qualification va s'ouvrir.
-    </p>
-
+    <p class="success-text">Inscription confirmée.<br><br>Le popup de qualification va s'ouvrir.</p>
   </div>
-
 </section>
 
-<!-- FOOTER -->
 <div class="footer">
   <div class="footer-brand">Mig<span>Mag</span></div>
   <div class="footer-by">par WeldingTalent</div>
 </div>
 
 <script>
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxV9guA1YgEXmA781ZYwgpWzDZm-RT2NrAZv7k5Uw4YRdg-PixRxMMxX4I3xPYY4E_F6A/exec';
+
   function handleSituation() {
     const situation = document.getElementById('situation').value;
     const groupe = document.getElementById('groupe-employeur');
     const label = document.getElementById('label-employeur');
     const input = document.getElementById('employeur');
-
-    if (situation === 'cdi') {
-      groupe.style.display = 'block';
-      label.textContent = 'Nom de ton entreprise';
-      input.placeholder = "Ex : Airbus, Vallourec, ...";
-    } else if (situation === 'interim') {
-      groupe.style.display = 'block';
-      label.textContent = 'Ton agence intérim';
-      input.placeholder = "Ex : Adecco, Manpower, ...";
-    } else {
-      groupe.style.display = 'none';
-      input.value = '';
-    }
+    if (situation === 'cdi') { groupe.style.display = 'block'; label.textContent = 'Nom de ton entreprise'; input.placeholder = "Ex : Airbus, Vallourec, ..."; }
+    else if (situation === 'interim') { groupe.style.display = 'block'; label.textContent = 'Ton agence intérim'; input.placeholder = "Ex : Adecco, Manpower, ..."; }
+    else { groupe.style.display = 'none'; input.value = ''; }
   }
 
   function handleSubmit() {
     const prenom = document.getElementById('prenom').value.trim();
+    const nom = document.getElementById('nom').value.trim();
     const tel = document.getElementById('tel').value.trim();
     const cp = document.getElementById('cp').value.trim();
     const procede = document.getElementById('procede').value;
     const situation = document.getElementById('situation').value;
-
-    const nom = document.getElementById('nom').value.trim();
     if (!prenom || !nom || !tel || !cp || !procede || !situation) {
-      [
-        { id: 'prenom', val: prenom },
-        { id: 'nom', val: nom },
-        { id: 'tel', val: tel },
-        { id: 'cp', val: cp },
-      ].forEach(f => {
+      [{id:'prenom',val:prenom},{id:'nom',val:nom},{id:'tel',val:tel},{id:'cp',val:cp}].forEach(f => {
         const el = document.getElementById(f.id);
-        if (!f.val) {
-          el.style.borderColor = '#ff4444';
-          el.addEventListener('input', () => el.style.borderColor = '', { once: true });
-        }
+        if (!f.val) { el.style.borderColor = '#ff4444'; el.addEventListener('input', () => el.style.borderColor = '', {once:true}); }
       });
       if (!procede) document.getElementById('procede').style.borderColor = '#ff4444';
       if (!situation) document.getElementById('situation').style.borderColor = '#ff4444';
       return;
     }
-
     const employeur = document.getElementById('employeur').value.trim();
     const cdi = document.querySelector('input[name="cdi"]:checked');
-
     document.getElementById('form-wrapper').style.display = 'none';
     document.getElementById('success').classList.add('active');
     window.scrollTo({ top: document.getElementById('inscription').offsetTop, behavior: 'smooth' });
     setTimeout(openPopup, 800);
-
-    // Envoi vers Google Sheets
-    const payload = {
-      prenom, nom, tel, cp, procede, situation,
-      employeur: employeur || '',
-      cdi: cdi ? cdi.value : 'non précisé'
-    };
-
-    fetch('https://script.google.com/macros/s/AKfycbzCvG_PWf783-S5L70RShO2Ci-Gbtwgg_MMTXL0OXRrNTkJaB6mnxbvs0zj9yUOHW2yHQ/exec', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
+    fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ prenom, nom, tel, cp, procede, situation, employeur: employeur || '', cdi: cdi ? cdi.value : 'non précisé' })
     }).catch(err => console.error('Erreur envoi:', err));
   }
 
-  // Smooth scroll for CTA
-  document.querySelector('.cta-btn').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.getElementById('inscription').scrollIntoView({ behavior: 'smooth' });
-  });
+  document.querySelector('.cta-btn').addEventListener('click', function(e) { e.preventDefault(); document.getElementById('inscription').scrollIntoView({ behavior: 'smooth' }); });
 
-  // POPUP QUALIFICATION
   let pData = {};
   const P_TOTAL = 10;
-
-  function openPopup() {
-    document.getElementById('popup-qual').classList.add('active');
-    document.body.style.overflow = 'hidden';
-    pUpdateBar(0);
-  }
-
-  function closePopup() {
-    document.getElementById('popup-qual').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  function pUpdateBar(step) {
-    document.getElementById('popup-bar').style.width = (step / P_TOTAL * 100) + '%';
-  }
-
+  function openPopup() { document.getElementById('popup-qual').classList.add('active'); document.body.style.overflow = 'hidden'; pUpdateBar(0); }
+  function closePopup() { document.getElementById('popup-qual').classList.remove('active'); document.body.style.overflow = ''; }
+  function pUpdateBar(step) { document.getElementById('popup-bar').style.width = (step / P_TOTAL * 100) + '%'; }
   function pNext(current) {
     pCollect(current);
     document.getElementById('pq' + current).classList.remove('active');
     const next = current + 1;
-    if (next <= P_TOTAL) {
-      document.getElementById('pq' + next).classList.add('active');
-      pUpdateBar(current);
-    }
-    // Hide header after Q1
-    if (current === 1) {
-      document.getElementById('popup-header').style.display = 'none';
-    }
+    if (next <= P_TOTAL) { document.getElementById('pq' + next).classList.add('active'); pUpdateBar(current); }
+    if (current === 1) { document.getElementById('popup-header').style.display = 'none'; }
   }
-
   function pCollect(q) {
     const gc = (ids) => ids.filter(id => { const el = document.getElementById(id); return el && el.checked; }).map(id => document.getElementById(id).value).join(', ');
     switch(q) {
@@ -824,21 +206,16 @@
       case 9: pData.salaire_vise = document.getElementById('pq-sal-vise').value || ''; break;
     }
   }
-
   function pSubmit() {
     pCollect(10);
     const d = document.querySelector('input[name="pd"]:checked');
     pData.disponibilite = d ? d.value : '';
     pData.type = 'qualification';
     pData.tel = document.getElementById('tel').value.trim();
-
-    fetch('https://script.google.com/macros/s/AKfycbzCvG_PWf783-S5L70RShO2Ci-Gbtwgg_MMTXL0OXRrNTkJaB6mnxbvs0zj9yUOHW2yHQ/exec', {
-      method: 'POST', mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
+    pData.prenom = document.getElementById('prenom').value.trim();
+    fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(pData)
     }).catch(err => console.error(err));
-
-    // Show done
     document.getElementById('pq10').classList.remove('active');
     document.getElementById('pq-done').classList.add('active');
     document.getElementById('popup-skip').style.display = 'none';
@@ -846,178 +223,26 @@
   }
 </script>
 
-
-<!-- POPUP QUALIFICATION -->
 <div class="popup-overlay" id="popup-qual">
   <div class="popup-box">
-
-    <!-- Header -->
     <div class="popup-header" id="popup-header">
       <div class="popup-icon">🔥</div>
       <div class="popup-title">Inscription<br><span>confirmée !</span></div>
-      <p class="popup-subtitle">
-        Complète ton profil technique en 2 minutes<br>
-        pour recevoir des offres CDI adaptées.
-      </p>
+      <p class="popup-subtitle">Complète ton profil technique en 2 minutes<br>pour recevoir des offres CDI adaptées.</p>
     </div>
-
-    <!-- Progress -->
-    <div class="popup-progress">
-      <div class="popup-progress-bar" id="popup-bar"></div>
-    </div>
-
-    <!-- Q1 -->
-    <div class="popup-step active" id="pq1">
-      <div class="popup-step-label">Question 1 / 10</div>
-      <div class="popup-question">Ton procédé principal ?</div>
-      <select class="form-select" id="pq-procede">
-        <option value="" disabled selected>Choisis</option>
-        <option>MIG</option><option>MAG</option><option>MIG + MAG</option>
-        <option>TIG</option><option>MMA (électrode enrobée)</option>
-      </select>
-      <button class="submit-btn" style="margin-top:16px" onclick="pNext(1)">Suivant →</button>
-    </div>
-
-    <!-- Q2 -->
-    <div class="popup-step" id="pq2">
-      <div class="popup-step-label">Question 2 / 10</div>
-      <div class="popup-question">Matériaux maîtrisés ?</div>
-      <div class="toggle-group" style="grid-template-columns:1fr 1fr">
-        <div class="toggle-option"><input type="checkbox" id="pm-acier" value="Acier"><label class="toggle-label" for="pm-acier">Acier</label></div>
-        <div class="toggle-option"><input type="checkbox" id="pm-inox" value="Inox"><label class="toggle-label" for="pm-inox">Inox</label></div>
-        <div class="toggle-option"><input type="checkbox" id="pm-alu" value="Aluminium"><label class="toggle-label" for="pm-alu">Aluminium</label></div>
-        <div class="toggle-option"><input type="checkbox" id="pm-autre" value="Autre"><label class="toggle-label" for="pm-autre">Autre</label></div>
-      </div>
-      <button class="submit-btn" style="margin-top:16px" onclick="pNext(2)">Suivant →</button>
-    </div>
-
-    <!-- Q3 -->
-    <div class="popup-step" id="pq3">
-      <div class="popup-step-label">Question 3 / 10</div>
-      <div class="popup-question">Positions de soudage ?</div>
-      <div class="toggle-group" style="grid-template-columns:1fr 1fr 1fr">
-        <div class="toggle-option"><input type="checkbox" id="pp-pa" value="PA"><label class="toggle-label" for="pp-pa">PA</label></div>
-        <div class="toggle-option"><input type="checkbox" id="pp-pb" value="PB"><label class="toggle-label" for="pp-pb">PB</label></div>
-        <div class="toggle-option"><input type="checkbox" id="pp-pc" value="PC"><label class="toggle-label" for="pp-pc">PC</label></div>
-        <div class="toggle-option"><input type="checkbox" id="pp-pf" value="PF"><label class="toggle-label" for="pp-pf">PF</label></div>
-        <div class="toggle-option"><input type="checkbox" id="pp-pg" value="PG"><label class="toggle-label" for="pp-pg">PG</label></div>
-        <div class="toggle-option"><input type="checkbox" id="pp-pe" value="PE"><label class="toggle-label" for="pp-pe">PE</label></div>
-      </div>
-      <button class="submit-btn" style="margin-top:16px" onclick="pNext(3)">Suivant →</button>
-    </div>
-
-    <!-- Q4 -->
-    <div class="popup-step" id="pq4">
-      <div class="popup-step-label">Question 4 / 10</div>
-      <div class="popup-question">Certification EN ISO 9606 ?</div>
-      <div class="toggle-group">
-        <div class="toggle-option"><input type="radio" name="pc" id="pc-ok" value="À jour"><label class="toggle-label" for="pc-ok">✓ À jour</label></div>
-        <div class="toggle-option"><input type="radio" name="pc" id="pc-exp" value="Expirée"><label class="toggle-label" for="pc-exp">Expirée</label></div>
-        <div class="toggle-option"><input type="radio" name="pc" id="pc-non" value="Non certifié"><label class="toggle-label" for="pc-non">Non certifié</label></div>
-      </div>
-      <button class="submit-btn" style="margin-top:16px" onclick="pNext(4)">Suivant →</button>
-    </div>
-
-    <!-- Q5 -->
-    <div class="popup-step" id="pq5">
-      <div class="popup-step-label">Question 5 / 10</div>
-      <div class="popup-question">Tu lis les plans techniques ?</div>
-      <div class="toggle-group">
-        <div class="toggle-option"><input type="radio" name="ppl" id="ppl-oui" value="Oui"><label class="toggle-label" for="ppl-oui">✓ Oui</label></div>
-        <div class="toggle-option"><input type="radio" name="ppl" id="ppl-non" value="Non"><label class="toggle-label" for="ppl-non">Non</label></div>
-        <div class="toggle-option"><input type="radio" name="ppl" id="ppl-part" value="Partiel"><label class="toggle-label" for="ppl-part">Partiellement</label></div>
-      </div>
-      <button class="submit-btn" style="margin-top:16px" onclick="pNext(5)">Suivant →</button>
-    </div>
-
-    <!-- Q6 -->
-    <div class="popup-step" id="pq6">
-      <div class="popup-step-label">Question 6 / 10</div>
-      <div class="popup-question">Distance max domicile → travail ?</div>
-      <select class="form-select" id="pq-distance">
-        <option value="" disabled selected>Choisis</option>
-        <option>Moins de 20 km</option>
-        <option>Jusqu'à 30 km</option>
-        <option>Jusqu'à 50 km</option>
-        <option>Plus de 50 km</option>
-      </select>
-      <button class="submit-btn" style="margin-top:16px" onclick="pNext(6)">Suivant →</button>
-    </div>
-
-    <!-- Q7 -->
-    <div class="popup-step" id="pq7">
-      <div class="popup-step-label">Question 7 / 10</div>
-      <div class="popup-question">Horaires acceptés ?</div>
-      <div class="toggle-group" style="grid-template-columns:1fr 1fr">
-        <div class="toggle-option"><input type="checkbox" id="ph-jour" value="Journée"><label class="toggle-label" for="ph-jour">Journée</label></div>
-        <div class="toggle-option"><input type="checkbox" id="ph-2x8" value="2x8"><label class="toggle-label" for="ph-2x8">2x8</label></div>
-        <div class="toggle-option"><input type="checkbox" id="ph-3x8" value="3x8"><label class="toggle-label" for="ph-3x8">3x8</label></div>
-        <div class="toggle-option"><input type="checkbox" id="ph-nuit" value="Nuit"><label class="toggle-label" for="ph-nuit">Nuit</label></div>
-      </div>
-      <button class="submit-btn" style="margin-top:16px" onclick="pNext(7)">Suivant →</button>
-    </div>
-
-    <!-- Q8 -->
-    <div class="popup-step" id="pq8">
-      <div class="popup-step-label">Question 8 / 10</div>
-      <div class="popup-question">Salaire actuel (brut mensuel) ?</div>
-      <select class="form-select" id="pq-sal-actuel">
-        <option value="" disabled selected>Choisis</option>
-        <option>Moins de 1 800 €</option>
-        <option>1 800 – 2 000 €</option>
-        <option>2 000 – 2 300 €</option>
-        <option>2 300 – 2 600 €</option>
-        <option>Plus de 2 600 €</option>
-      </select>
-      <button class="submit-btn" style="margin-top:16px" onclick="pNext(8)">Suivant →</button>
-    </div>
-
-    <!-- Q9 -->
-    <div class="popup-step" id="pq9">
-      <div class="popup-step-label">Question 9 / 10</div>
-      <div class="popup-question">Salaire visé (brut mensuel) ?</div>
-      <select class="form-select" id="pq-sal-vise">
-        <option value="" disabled selected>Choisis</option>
-        <option>1 800 – 2 000 €</option>
-        <option>2 000 – 2 300 €</option>
-        <option>2 300 – 2 600 €</option>
-        <option>2 600 – 3 000 €</option>
-        <option>Plus de 3 000 €</option>
-      </select>
-      <button class="submit-btn" style="margin-top:16px" onclick="pNext(9)">Suivant →</button>
-    </div>
-
-    <!-- Q10 -->
-    <div class="popup-step" id="pq10">
-      <div class="popup-step-label">Question 10 / 10</div>
-      <div class="popup-question">Tu es disponible quand ?</div>
-      <div class="toggle-group" style="grid-template-columns:1fr 1fr">
-        <div class="toggle-option"><input type="radio" name="pd" id="pd-imm" value="Immédiatement"><label class="toggle-label" for="pd-imm">Immédiatement</label></div>
-        <div class="toggle-option"><input type="radio" name="pd" id="pd-1m" value="1 mois"><label class="toggle-label" for="pd-1m">Dans 1 mois</label></div>
-        <div class="toggle-option"><input type="radio" name="pd" id="pd-3m" value="3 mois"><label class="toggle-label" for="pd-3m">Dans 3 mois</label></div>
-        <div class="toggle-option"><input type="radio" name="pd" id="pd-open" value="Ouvert"><label class="toggle-label" for="pd-open">Ouvert</label></div>
-      </div>
-      <button class="submit-btn" style="margin-top:16px" onclick="pSubmit()">Envoyer mon profil 🔥</button>
-    </div>
-
-    <!-- Done -->
-    <div class="popup-step" id="pq-done">
-      <div class="popup-done">
-        <div style="font-size:48px;margin-bottom:16px">✅</div>
-        <div class="popup-title">Profil<br><span>complet !</span></div>
-        <p class="popup-subtitle" style="margin-top:12px">
-          On analyse ton profil et on te contacte dès qu'on a une opportunité.<br><br>
-          Parle de MigMag à un collègue soudeur 👊
-        </p>
-        <button class="submit-btn" style="margin-top:24px" onclick="closePopup()">Fermer</button>
-      </div>
-    </div>
-
-    <!-- Skip -->
-    <div class="popup-skip" id="popup-skip">
-      <button onclick="closePopup()">Passer pour l'instant</button>
-    </div>
-
+    <div class="popup-progress"><div class="popup-progress-bar" id="popup-bar"></div></div>
+    <div class="popup-step active" id="pq1"><div class="popup-step-label">Question 1 / 10</div><div class="popup-question">Ton procédé principal ?</div><select class="form-select" id="pq-procede"><option value="" disabled selected>Choisis</option><option>MIG</option><option>MAG</option><option>MIG + MAG</option><option>TIG</option><option>MMA (électrode enrobée)</option></select><button class="submit-btn" style="margin-top:16px" onclick="pNext(1)">Suivant →</button></div>
+    <div class="popup-step" id="pq2"><div class="popup-step-label">Question 2 / 10</div><div class="popup-question">Matériaux maîtrisés ?</div><div class="toggle-group" style="grid-template-columns:1fr 1fr"><div class="toggle-option"><input type="checkbox" id="pm-acier" value="Acier"><label class="toggle-label" for="pm-acier">Acier</label></div><div class="toggle-option"><input type="checkbox" id="pm-inox" value="Inox"><label class="toggle-label" for="pm-inox">Inox</label></div><div class="toggle-option"><input type="checkbox" id="pm-alu" value="Aluminium"><label class="toggle-label" for="pm-alu">Aluminium</label></div><div class="toggle-option"><input type="checkbox" id="pm-autre" value="Autre"><label class="toggle-label" for="pm-autre">Autre</label></div></div><button class="submit-btn" style="margin-top:16px" onclick="pNext(2)">Suivant →</button></div>
+    <div class="popup-step" id="pq3"><div class="popup-step-label">Question 3 / 10</div><div class="popup-question">Positions de soudage ?</div><div class="toggle-group" style="grid-template-columns:1fr 1fr 1fr"><div class="toggle-option"><input type="checkbox" id="pp-pa" value="PA"><label class="toggle-label" for="pp-pa">PA</label></div><div class="toggle-option"><input type="checkbox" id="pp-pb" value="PB"><label class="toggle-label" for="pp-pb">PB</label></div><div class="toggle-option"><input type="checkbox" id="pp-pc" value="PC"><label class="toggle-label" for="pp-pc">PC</label></div><div class="toggle-option"><input type="checkbox" id="pp-pf" value="PF"><label class="toggle-label" for="pp-pf">PF</label></div><div class="toggle-option"><input type="checkbox" id="pp-pg" value="PG"><label class="toggle-label" for="pp-pg">PG</label></div><div class="toggle-option"><input type="checkbox" id="pp-pe" value="PE"><label class="toggle-label" for="pp-pe">PE</label></div></div><button class="submit-btn" style="margin-top:16px" onclick="pNext(3)">Suivant →</button></div>
+    <div class="popup-step" id="pq4"><div class="popup-step-label">Question 4 / 10</div><div class="popup-question">Certification EN ISO 9606 ?</div><div class="toggle-group"><div class="toggle-option"><input type="radio" name="pc" id="pc-ok" value="À jour"><label class="toggle-label" for="pc-ok">✓ À jour</label></div><div class="toggle-option"><input type="radio" name="pc" id="pc-exp" value="Expirée"><label class="toggle-label" for="pc-exp">Expirée</label></div><div class="toggle-option"><input type="radio" name="pc" id="pc-non" value="Non certifié"><label class="toggle-label" for="pc-non">Non certifié</label></div></div><button class="submit-btn" style="margin-top:16px" onclick="pNext(4)">Suivant →</button></div>
+    <div class="popup-step" id="pq5"><div class="popup-step-label">Question 5 / 10</div><div class="popup-question">Tu lis les plans techniques ?</div><div class="toggle-group"><div class="toggle-option"><input type="radio" name="ppl" id="ppl-oui" value="Oui"><label class="toggle-label" for="ppl-oui">✓ Oui</label></div><div class="toggle-option"><input type="radio" name="ppl" id="ppl-non" value="Non"><label class="toggle-label" for="ppl-non">Non</label></div><div class="toggle-option"><input type="radio" name="ppl" id="ppl-part" value="Partiel"><label class="toggle-label" for="ppl-part">Partiellement</label></div></div><button class="submit-btn" style="margin-top:16px" onclick="pNext(5)">Suivant →</button></div>
+    <div class="popup-step" id="pq6"><div class="popup-step-label">Question 6 / 10</div><div class="popup-question">Distance max domicile → travail ?</div><select class="form-select" id="pq-distance"><option value="" disabled selected>Choisis</option><option>Moins de 20 km</option><option>Jusqu'à 30 km</option><option>Jusqu'à 50 km</option><option>Plus de 50 km</option></select><button class="submit-btn" style="margin-top:16px" onclick="pNext(6)">Suivant →</button></div>
+    <div class="popup-step" id="pq7"><div class="popup-step-label">Question 7 / 10</div><div class="popup-question">Horaires acceptés ?</div><div class="toggle-group" style="grid-template-columns:1fr 1fr"><div class="toggle-option"><input type="checkbox" id="ph-jour" value="Journée"><label class="toggle-label" for="ph-jour">Journée</label></div><div class="toggle-option"><input type="checkbox" id="ph-2x8" value="2x8"><label class="toggle-label" for="ph-2x8">2x8</label></div><div class="toggle-option"><input type="checkbox" id="ph-3x8" value="3x8"><label class="toggle-label" for="ph-3x8">3x8</label></div><div class="toggle-option"><input type="checkbox" id="ph-nuit" value="Nuit"><label class="toggle-label" for="ph-nuit">Nuit</label></div></div><button class="submit-btn" style="margin-top:16px" onclick="pNext(7)">Suivant →</button></div>
+    <div class="popup-step" id="pq8"><div class="popup-step-label">Question 8 / 10</div><div class="popup-question">Salaire actuel (brut mensuel) ?</div><select class="form-select" id="pq-sal-actuel"><option value="" disabled selected>Choisis</option><option>Moins de 1 800 €</option><option>1 800 – 2 000 €</option><option>2 000 – 2 300 €</option><option>2 300 – 2 600 €</option><option>Plus de 2 600 €</option></select><button class="submit-btn" style="margin-top:16px" onclick="pNext(8)">Suivant →</button></div>
+    <div class="popup-step" id="pq9"><div class="popup-step-label">Question 9 / 10</div><div class="popup-question">Salaire visé (brut mensuel) ?</div><select class="form-select" id="pq-sal-vise"><option value="" disabled selected>Choisis</option><option>1 800 – 2 000 €</option><option>2 000 – 2 300 €</option><option>2 300 – 2 600 €</option><option>2 600 – 3 000 €</option><option>Plus de 3 000 €</option></select><button class="submit-btn" style="margin-top:16px" onclick="pNext(9)">Suivant →</button></div>
+    <div class="popup-step" id="pq10"><div class="popup-step-label">Question 10 / 10</div><div class="popup-question">Tu es disponible quand ?</div><div class="toggle-group" style="grid-template-columns:1fr 1fr"><div class="toggle-option"><input type="radio" name="pd" id="pd-imm" value="Immédiatement"><label class="toggle-label" for="pd-imm">Immédiatement</label></div><div class="toggle-option"><input type="radio" name="pd" id="pd-1m" value="1 mois"><label class="toggle-label" for="pd-1m">Dans 1 mois</label></div><div class="toggle-option"><input type="radio" name="pd" id="pd-3m" value="3 mois"><label class="toggle-label" for="pd-3m">Dans 3 mois</label></div><div class="toggle-option"><input type="radio" name="pd" id="pd-open" value="Ouvert"><label class="toggle-label" for="pd-open">Ouvert</label></div></div><button class="submit-btn" style="margin-top:16px" onclick="pSubmit()">Envoyer mon profil 🔥</button></div>
+    <div class="popup-step" id="pq-done"><div class="popup-done"><div style="font-size:48px;margin-bottom:16px">✅</div><div class="popup-title">Profil<br><span>complet !</span></div><p class="popup-subtitle" style="margin-top:12px">On analyse ton profil et on te contacte dès qu'on a une opportunité.<br><br>Parle de MigMag à un collègue soudeur 👊</p><button class="submit-btn" style="margin-top:24px" onclick="closePopup()">Fermer</button></div></div>
+    <div class="popup-skip" id="popup-skip"><button onclick="closePopup()">Passer pour l'instant</button></div>
   </div>
 </div>
 </body>
